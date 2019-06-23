@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameStudio.Shell", "Avalonia.GameStudio.Shell\Avalonia.GameStudio.Shell.csproj", "{819B365E-F194-4938-BE12-C6B59A37951A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{819B365E-F194-4938-BE12-C6B59A37951A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819B365E-F194-4938-BE12-C6B59A37951A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819B365E-F194-4938-BE12-C6B59A37951A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819B365E-F194-4938-BE12-C6B59A37951A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29EF1F75-957F-411F-B6B4-F21D15621C21}
+	EndGlobalSection
+EndGlobal
