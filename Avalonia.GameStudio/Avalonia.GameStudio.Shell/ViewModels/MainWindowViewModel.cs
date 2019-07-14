@@ -2,8 +2,15 @@
 
 namespace Avalonia.GameStudio.Shell.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    internal sealed class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel()
+        {
+            MainMenu = new MainMenuViewModel();
+        }
+
         public string Greeting => "Welcome to Avalonia!";
+
+        public MainMenuViewModel MainMenu { get; }
     }
 }

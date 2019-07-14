@@ -7,11 +7,12 @@
         x:Class="Avalonia.GameStudio.Shell.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Avalonia.GameStudio.Shell">
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
 
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
+  <DockPanel LastChildFill="True">
+    <ContentControl DockPanel.Dock="Top" Content="{Binding MainMenu}" />
     <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+  </DockPanel>
 </Window>
