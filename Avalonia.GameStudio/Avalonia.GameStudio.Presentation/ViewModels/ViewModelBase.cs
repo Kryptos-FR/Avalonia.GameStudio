@@ -51,7 +51,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         /// <param name="updateAction">The update action to execute after setting the value. Can be <c>null</c>.</param>
         /// <param name="propertyName">The name of the property that must be notified as changing/changed. Can use <see cref="CallerMemberNameAttribute"/>.</param>
         /// <returns><c>True</c> if the field was modified and events were raised, <c>False</c> if the new value was equal to the old one and nothing was done.</returns>
-        protected virtual bool SetValue<T>(ref T field, T value, Action updateAction, [CallerMemberName] string propertyName = "")
+        protected virtual bool SetValue<T>(ref T field, T value, Action? updateAction, [CallerMemberName] string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(field, value) == false)
             {
@@ -72,7 +72,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         /// <param name="updateAction">The update action that will actually manage the update of the property.</param>
         /// <param name="propertyName">The name of the property that must be notified as changing/changed. Can use <see cref="CallerMemberNameAttribute"/>.</param>
         /// <returns>This method always returns<c>True</c> since it always performs the update.</returns>
-        protected bool SetValue(Action updateAction, [CallerMemberName] string propertyName = "")
+        protected bool SetValue(Action? updateAction, [CallerMemberName] string propertyName = "")
         {
             return SetValue(null, updateAction, propertyName);
         }
@@ -86,7 +86,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         /// <param name="updateAction">The update action that will actually manage the update of the property.</param>
         /// <param name="propertyName">The name of the property that must be notified as changing/changed. Can use <see cref="CallerMemberNameAttribute"/>.</param>
         /// <returns>The value provided in the <see cref="hasChanged"/> argument.</returns>
-        protected bool SetValue(bool hasChanged, Action updateAction, [CallerMemberName] string propertyName = "")
+        protected bool SetValue(bool hasChanged, Action? updateAction, [CallerMemberName] string propertyName = "")
         {
             return SetValue(() => hasChanged, updateAction, propertyName);
         }
@@ -100,7 +100,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         /// <param name="updateAction">The update action that will actually manage the update of the property.</param>
         /// <param name="propertyName">The name of the property that must be notified as changing/changed. Can use <see cref="CallerMemberNameAttribute"/>.</param>
         /// <returns><c>True</c> if the update was done and events were raised, <c>False</c> if <see cref="hasChangedFunction"/> is not <c>null</c> and returned false.</returns>
-        protected virtual bool SetValue(Func<bool> hasChangedFunction, Action updateAction, [CallerMemberName] string propertyName = "")
+        protected virtual bool SetValue(Func<bool>? hasChangedFunction, Action? updateAction, [CallerMemberName] string propertyName = "")
         {
             var hasChanged = true;
             if (hasChangedFunction != null)
@@ -132,7 +132,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
 
             propertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
 
-            if (DependentProperties.TryGetValue(propertyName, out string[] dependentProperties))
+            if (DependentProperties.TryGetValue(propertyName, out string[]? dependentProperties))
                 foreach (var dependentProperty in dependentProperties)
                     OnPropertyChanging(dependentProperty);
         }
@@ -145,7 +145,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         {
             var propertyChanged = PropertyChanged;
 
-            if (DependentProperties.TryGetValue(propertyName, out string[] dependentProperties))
+            if (DependentProperties.TryGetValue(propertyName, out string[]? dependentProperties))
                 for (var i = dependentProperties.Length - 1; i >= 0; i--)
                     OnPropertyChanged(dependentProperties[i]);
 
@@ -164,9 +164,9 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         protected bool HasPropertyChangedSubscriber => PropertyChanged != null;
 
         /// <inheritdoc/>
-        public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangingEventHandler? PropertyChanging;
 
         /// <inheritdoc/>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

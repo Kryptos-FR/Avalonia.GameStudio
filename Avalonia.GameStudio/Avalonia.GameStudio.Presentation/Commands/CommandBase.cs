@@ -29,16 +29,16 @@ namespace Avalonia.GameStudio.Presentation.Commands
         }
 
         /// <inheritdoc/>
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged;
 
         /// <inheritdoc/>
-        public virtual bool CanExecute(object parameter)
+        public virtual bool CanExecute(object? parameter)
         {
             return isEnabled;
         }
 
         /// <inheritdoc/>
-        public abstract void Execute(object parameter);
+        public abstract void Execute(object? parameter);
 
         /// <summary>
         /// Invokes <see cref="CanExecute(object)"/> with a <c>null</c> argument.
