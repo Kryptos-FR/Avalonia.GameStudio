@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Avalonia.GameStudio.Shell.ViewModels;
+using Avalonia.GameStudio.Presentation.ViewModels;
 
 namespace Avalonia.GameStudio.Shell
 {

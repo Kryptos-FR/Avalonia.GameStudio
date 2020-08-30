@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.GameStudio.Shell",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.GameStudio.Core", "Avalonia.GameStudio.Core\Avalonia.GameStudio.Core.csproj", "{8F84F869-3CB6-458D-AA85-7472D3E1BFD9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.GameStudio.Presentation", "Avalonia.GameStudio.Presentation\Avalonia.GameStudio.Presentation.csproj", "{53EA73E4-E342-48B6-A959-64F94E000730}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8F84F869-3CB6-458D-AA85-7472D3E1BFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F84F869-3CB6-458D-AA85-7472D3E1BFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F84F869-3CB6-458D-AA85-7472D3E1BFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53EA73E4-E342-48B6-A959-64F94E000730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EA73E4-E342-48B6-A959-64F94E000730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EA73E4-E342-48B6-A959-64F94E000730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EA73E4-E342-48B6-A959-64F94E000730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

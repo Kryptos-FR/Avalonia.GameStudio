@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Runtime.CompilerServices;
 using ReactiveUI;
 
-namespace Avalonia.GameStudio.Shell.ViewModels
+namespace Avalonia.GameStudio.Presentation.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {

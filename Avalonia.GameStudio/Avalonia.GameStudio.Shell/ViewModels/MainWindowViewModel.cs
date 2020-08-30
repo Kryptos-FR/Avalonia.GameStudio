@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Avalonia.GameStudio.Presentation.ViewModels;
 
 namespace Avalonia.GameStudio.Shell.ViewModels
 {
