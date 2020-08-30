@@ -16,7 +16,6 @@
   <ItemGroup> 
     <PackageReference Include="Avalonia" Version="0.9.12" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.GameStudio.Presentation\Avalonia.GameStudio.Presentation.csproj" />

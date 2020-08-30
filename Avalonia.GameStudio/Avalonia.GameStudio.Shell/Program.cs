@@ -1,7 +1,4 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Logging.Serilog;
-using Avalonia.ReactiveUI;
+﻿using Avalonia.Logging.Serilog;
 
 namespace Avalonia.GameStudio.Shell
 {
@@ -16,7 +13,6 @@ namespace Avalonia.GameStudio.Shell
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToDebug()
-                .UseReactiveUI();
+                .LogToDebug();
     }
 }
