@@ -8,6 +8,8 @@ namespace Avalonia.GameStudio.Shell
     /// <inheritdoc />
     internal sealed class App : Application
     {
+        public static MainWindow? MainWindow { get; set; }
+
         /// <inheritdoc />
         public override void Initialize()
         {
@@ -19,7 +21,7 @@ namespace Avalonia.GameStudio.Shell
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
+                desktop.MainWindow = MainWindow = new MainWindow
                 {
                     DataContext = new MainWindowViewModel(),
                 };

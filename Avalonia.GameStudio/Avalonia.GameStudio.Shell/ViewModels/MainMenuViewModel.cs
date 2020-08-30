@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Text;
+using System.Threading.Tasks;
 
 using Avalonia.GameStudio.Presentation.Commands;
 using Avalonia.GameStudio.Presentation.ViewModels;
+using Avalonia.GameStudio.Presentation.Windows;
 
 namespace Avalonia.GameStudio.Shell.ViewModels
 {
@@ -15,7 +18,7 @@ namespace Avalonia.GameStudio.Shell.ViewModels
         /// </summary>
         public MainMenuViewModel()
         {
-            AboutCommand = new AnonymousCommand(AboutCommandImpl);
+            AboutCommand = new AnonymousTaskCommand(AboutCommandImpl);
             ExitCommand = new AnonymousCommand(ExitCommandImpl);
         }
 
@@ -32,11 +35,13 @@ namespace Avalonia.GameStudio.Shell.ViewModels
         /// <summary>
         /// Implements the <see cref="AboutCommand"/>.
         /// </summary>
-        private void AboutCommandImpl()
+        private async Task AboutCommandImpl()
         {
-            Console.WriteLine("Avalonia GameStudio 0.1!");
-            Console.WriteLine("========================");
-            Console.WriteLine("Copyright 2020 - Nicolas Musset");
+            var message = new StringBuilder()
+                .AppendLine("Avalonia GameStudio 0.1")
+                .AppendLine("========================")
+                .AppendLine("Copyright 2020 - Nicolas Musset");
+            await MessageBox.ShowAsync(App.MainWindow, message.ToString(), "About Avalonia GameStudio", MessageBoxButtons.Ok);
         }
 
         /// <summary>
