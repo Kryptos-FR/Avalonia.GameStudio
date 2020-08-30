@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.GameStudio.Presentation.Commands;
 using Avalonia.GameStudio.Presentation.ViewModels;
 using Avalonia.GameStudio.Presentation.Windows;
@@ -50,7 +51,7 @@ namespace Avalonia.GameStudio.Shell.ViewModels
         private void ExitCommandImpl()
         {
             var lifetime = Application.Current.ApplicationLifetime;
-            if (lifetime is Controls.ApplicationLifetimes.IControlledApplicationLifetime controlled)
+            if (lifetime is IControlledApplicationLifetime controlled)
             {
                 controlled.Shutdown();
                 return;

@@ -7,8 +7,10 @@ namespace Avalonia.GameStudio.Shell
 {
     public class ViewLocator : IDataTemplate
     {
+        /// <inheritdoc />
         public bool SupportsRecycling => false;
 
+        /// <inheritdoc />
         public IControl Build(object data)
         {
             var name = data.GetType().FullName!.Replace("ViewModel", "View");
@@ -24,6 +26,7 @@ namespace Avalonia.GameStudio.Shell
             }
         }
 
+        /// <inheritdoc />
         public bool Match(object data)
         {
             return data is ViewModelBase;

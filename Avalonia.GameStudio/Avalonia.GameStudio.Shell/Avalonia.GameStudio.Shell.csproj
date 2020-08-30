@@ -8,7 +8,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -20,9 +19,9 @@
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
     <PackageReference Include="Dock.Avalonia" Version="0.9.12" />
-    <PackageReference Include="Dock.Model.Avalonia" Version="0.9.12" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Avalonia.GameStudio.Presentation.Dock.Model\Avalonia.GameStudio.Presentation.Dock.Model.csproj" />
     <ProjectReference Include="..\Avalonia.GameStudio.Presentation\Avalonia.GameStudio.Presentation.csproj" />
   </ItemGroup>
 </Project>
