@@ -25,6 +25,16 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         {
         }
 
+        /// <inheritdoc/>
+        public event PropertyChangingEventHandler? PropertyChanging;
+
+        /// <inheritdoc/>
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected bool HasPropertyChangingSubscriber => PropertyChanging != null;
+
+        protected bool HasPropertyChangedSubscriber => PropertyChanged != null;
+
         /// <summary>
         /// Sets the value of a field to the given value. Both values are compared with the default <see cref="EqualityComparer{T}"/>, and if they are equals,
         /// this method does nothing. If they are different, the <see cref="PropertyChanging"/> event will be raised first, then the field value will be modified,
@@ -117,7 +127,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         }
 
         /// <summary>
-        /// This method will raise the <see cref="PropertyChanging"/> for the property name passed as argument.
+        /// This method will raise the <see cref="PropertyChanging"/> event for the property name passed as argument.
         /// </summary>
         /// <param name="propertyName">The name of the property that is changing.</param>
         protected virtual void OnPropertyChanging(string propertyName)
@@ -138,7 +148,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         }
 
         /// <summary>
-        /// This method will raise the <see cref="PropertyChanged"/> for the property name passed as argument.
+        /// This method will raise the <see cref="PropertyChanged"/> event for the property name passed as argument.
         /// </summary>
         /// <param name="propertyName">The name of the property that has changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
@@ -159,14 +169,14 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
 #endif
         }
 
-        protected bool HasPropertyChangingSubscriber => PropertyChanging != null;
-
-        protected bool HasPropertyChangedSubscriber => PropertyChanged != null;
-
-        /// <inheritdoc/>
-        public event PropertyChangingEventHandler? PropertyChanging;
-
-        /// <inheritdoc/>
-        public event PropertyChangedEventHandler? PropertyChanged;
+        /// <summary>
+        /// Raises the <see cref="PropertyChanging"/> event followed by the <see cref="PropertyChanged"/> event for the property name passed as argument
+        /// </summary>
+        /// <param name="propertyName">The name of the property.</param>
+        protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            OnPropertyChanging(propertyName);
+            OnPropertyChanged(propertyName);
+        }
     }
 }
