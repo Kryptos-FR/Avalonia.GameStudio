@@ -17,8 +17,8 @@
     <AvaloniaResource Include="Assets\*" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
-    <PackageReference Include="Dock.Avalonia" Version="0.9.12" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+    <PackageReference Include="Dock.Avalonia" Version="0.10.0-preview5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.GameStudio.Presentation.Dock.Model\Avalonia.GameStudio.Presentation.Dock.Model.csproj" />

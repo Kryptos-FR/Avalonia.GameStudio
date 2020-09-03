@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Dock.Model" Version="0.9.12" />
+    <PackageReference Include="Dock.Model" Version="0.10.0-preview5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.GameStudio.Presentation\Avalonia.GameStudio.Presentation.csproj" />
