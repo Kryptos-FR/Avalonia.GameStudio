@@ -6,12 +6,13 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia.GameStudio.Shell.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Avalonia.GameStudio.Shell">
+        Title="{Binding Title}">
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
 
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+  <DockPanel LastChildFill="True">
+    <ContentControl DockPanel.Dock="Top" Content="{Binding MainMenu}" />
+    <ContentControl Content="{Binding Shell}" />
+  </DockPanel>
 </Window>

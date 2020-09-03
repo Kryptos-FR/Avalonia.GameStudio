@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFrameworks>net4.8;net5.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
     <AnalysisLevel>latest</AnalysisLevel>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <LangVersion>9</LangVersion>
@@ -14,14 +13,12 @@
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-    <AvaloniaResource Include="Assets\*" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.9.12" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
-    <PackageReference Include="Dock.Avalonia" Version="0.9.12" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Avalonia.GameStudio.Presentation.Dock.Model\Avalonia.GameStudio.Presentation.Dock.Model.csproj" />
-    <ProjectReference Include="..\Avalonia.GameStudio.Presentation\Avalonia.GameStudio.Presentation.csproj" />
+    <ProjectReference Include="..\Avalonia.GameStudio.Core\Avalonia.GameStudio.Core.csproj" />
   </ItemGroup>
 </Project>

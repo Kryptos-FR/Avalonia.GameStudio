@@ -4,19 +4,16 @@ using Avalonia.Markup.Xaml;
 namespace Avalonia.GameStudio.Shell.Views
 {
     /// <summary>
-    /// View for the main window.
+    /// View for the shell.
     /// </summary>
-    public class MainWindow : Window
+    public class ShellView : UserControl
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="MainWindow"/>.
+        /// Initializes a new instance of <see cref="ShellView"/>.
         /// </summary>
-        public MainWindow()
+        public ShellView()
         {
             InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
         }
 
         private void InitializeComponent()
