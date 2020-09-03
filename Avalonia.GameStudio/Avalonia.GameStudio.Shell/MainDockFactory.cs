@@ -81,14 +81,6 @@ namespace Avalonia.GameStudio.Shell
             var root = base.CreateRootDock();
             root.Id = "Root";
             root.Title = "Root";
-            root.Left = CreatePinDock();
-            root.Left.Alignment = Alignment.Left;
-            root.Top = CreatePinDock();
-            root.Top.Alignment = Alignment.Top;
-            root.Right = CreatePinDock();
-            root.Right.Alignment = Alignment.Right;
-            root.Bottom = CreatePinDock();
-            root.Bottom.Alignment = Alignment.Bottom;
             return root;
         }
 
@@ -99,7 +91,6 @@ namespace Avalonia.GameStudio.Shell
             ContextLocator = new Dictionary<string, Func<object>>
             {
                 [nameof(IRootDock)] = () => dummyContext,
-                [nameof(IPinDock)] = () => dummyContext,
                 [nameof(IProportionalDock)] = () => dummyContext,
                 [nameof(IDocumentDock)] = () => dummyContext,
                 [nameof(IToolDock)] = () => dummyContext,

@@ -14,12 +14,17 @@ namespace Avalonia.GameStudio.Presentation.Dock.Model.Controls
     [DataContract(IsReference = true)]
     public class RootDock : DockBase, IRootDock
     {
+        private bool _isFocusableRoot;
         private IDockWindow? _window;
         private IList<IDockWindow>? _windows;
-        private IPinDock? _top;
-        private IPinDock? _bottom;
-        private IPinDock? _left;
-        private IPinDock? _right;
+
+        /// <inheritdoc/>
+        [DataMember(IsRequired = false, EmitDefaultValue = true)]
+        public bool IsFocusableRoot
+        {
+            get => _isFocusableRoot;
+            set => SetValue(ref _isFocusableRoot, value);
+        }
 
         /// <inheritdoc/>
         [DataMember(IsRequired = false, EmitDefaultValue = true)]
@@ -35,38 +40,6 @@ namespace Avalonia.GameStudio.Presentation.Dock.Model.Controls
         {
             get => _windows;
             set => SetValue(ref _windows, value);
-        }
-
-        /// <inheritdoc/>
-        [DataMember(IsRequired = false, EmitDefaultValue = true)]
-        public IPinDock? Top
-        {
-            get => _top;
-            set => SetValue(ref _top, value);
-        }
-
-        /// <inheritdoc/>
-        [DataMember(IsRequired = false, EmitDefaultValue = true)]
-        public IPinDock? Bottom
-        {
-            get => _bottom;
-            set => SetValue(ref _bottom, value);
-        }
-
-        /// <inheritdoc/>
-        [DataMember(IsRequired = false, EmitDefaultValue = true)]
-        public IPinDock? Left
-        {
-            get => _left;
-            set => SetValue(ref _left, value);
-        }
-
-        /// <inheritdoc/>
-        [DataMember(IsRequired = false, EmitDefaultValue = true)]
-        public IPinDock? Right
-        {
-            get => _right;
-            set => SetValue(ref _right, value);
         }
 
         /// <summary>

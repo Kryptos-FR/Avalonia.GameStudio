@@ -3,8 +3,6 @@ using System.Runtime.ExceptionServices;
 using System.Security;
 using System.Threading;
 
-using Avalonia.Logging.Serilog;
-
 namespace Avalonia.GameStudio.Shell
 {
     /// <summary>
