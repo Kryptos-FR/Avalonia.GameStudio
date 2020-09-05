@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.GameStudio.Present
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.GameStudio.Presentation.Dock.Model", "Avalonia.GameStudio.Presentation.Dock.Model\Avalonia.GameStudio.Presentation.Dock.Model.csproj", "{000A9219-9D6B-48BD-AB84-BFC8E6F644E9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{303E0F27-F14D-4A2A-885D-DFC07FC7C7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameStudio.Presentation.Tests", "..\tests\Avalonia.GameStudio.Presentation.Tests\Avalonia.GameStudio.Presentation.Tests.csproj", "{8908F45F-0A77-416E-8B69-46DFBCEFE0FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameStudio.TestHelpers", "..\tests\Avalonia.GameStudio.TestHelpers\Avalonia.GameStudio.TestHelpers.csproj", "{A75DC436-04D1-4DFA-8606-DAD16F48B24C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +39,21 @@ Global
 		{000A9219-9D6B-48BD-AB84-BFC8E6F644E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{000A9219-9D6B-48BD-AB84-BFC8E6F644E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{000A9219-9D6B-48BD-AB84-BFC8E6F644E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8908F45F-0A77-416E-8B69-46DFBCEFE0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8908F45F-0A77-416E-8B69-46DFBCEFE0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8908F45F-0A77-416E-8B69-46DFBCEFE0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8908F45F-0A77-416E-8B69-46DFBCEFE0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75DC436-04D1-4DFA-8606-DAD16F48B24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75DC436-04D1-4DFA-8606-DAD16F48B24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75DC436-04D1-4DFA-8606-DAD16F48B24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75DC436-04D1-4DFA-8606-DAD16F48B24C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8908F45F-0A77-416E-8B69-46DFBCEFE0FB} = {303E0F27-F14D-4A2A-885D-DFC07FC7C7EC}
+		{A75DC436-04D1-4DFA-8606-DAD16F48B24C} = {303E0F27-F14D-4A2A-885D-DFC07FC7C7EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29EF1F75-957F-411F-B6B4-F21D15621C21}
