@@ -31,9 +31,9 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         /// <inheritdoc/>
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected bool HasPropertyChangingSubscriber => PropertyChanging != null;
+        protected bool HasPropertyChangingSubscriber => PropertyChanging is not null;
 
-        protected bool HasPropertyChangedSubscriber => PropertyChanged != null;
+        protected bool HasPropertyChangedSubscriber => PropertyChanged is not null;
 
         /// <summary>
         /// Sets the value of a field to the given value. Both values are compared with the default <see cref="EqualityComparer{T}"/>, and if they are equals,
@@ -113,7 +113,7 @@ namespace Avalonia.GameStudio.Presentation.ViewModels
         protected virtual bool SetValue(Func<bool>? hasChangedFunction, Action? updateAction, [CallerMemberName] string propertyName = "")
         {
             var hasChanged = true;
-            if (hasChangedFunction != null)
+            if (hasChangedFunction is not null)
             {
                 hasChanged = hasChangedFunction();
             }

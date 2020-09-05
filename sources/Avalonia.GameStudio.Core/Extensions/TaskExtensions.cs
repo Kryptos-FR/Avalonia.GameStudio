@@ -9,7 +9,7 @@ namespace Avalonia.GameStudio.Core.Extensions
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Forget(this Task task)
         {
-            if (task == null) throw new ArgumentNullException();
+            if (task is null) throw new ArgumentNullException(nameof(task));
         }
     }
 }

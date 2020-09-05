@@ -46,7 +46,7 @@ namespace Avalonia.GameStudio.Shell
 
         private static void HandleException(Exception? exception, int location)
         {
-            if (exception == null) return;
+            if (exception is null) return;
 
             // prevent multiple crash reports
             if (Interlocked.CompareExchange(ref _terminatedState, 1, 0) == 1) return;

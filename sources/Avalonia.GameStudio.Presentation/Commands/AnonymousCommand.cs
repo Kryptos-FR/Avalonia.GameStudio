@@ -21,7 +21,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         /// <param name="canExecute">An anonymous method that will be called each time the command <see cref="CommandBase.CanExecute(object)"/> method is invoked.</param>
         public AnonymousCommand(Action action, Func<bool>? canExecute = null)
         {
-            if (action == null) throw new ArgumentNullException(nameof(action));
+            if (action is null) throw new ArgumentNullException(nameof(action));
             this.action = x => action();
             this.canExecute = canExecute;
         }
@@ -33,7 +33,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         /// <param name="canExecute">An anonymous method that will be called each time the command <see cref="CommandBase.CanExecute(object)"/> method is invoked.</param>
         public AnonymousCommand(Action<object?> action, Func<bool>? canExecute = null)
         {
-            if (action == null) throw new ArgumentNullException(nameof(action));
+            if (action is null) throw new ArgumentNullException(nameof(action));
             this.action = action;
             this.canExecute = canExecute;
         }
@@ -57,7 +57,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         public override bool CanExecute(object? parameter)
         {
             var result = base.CanExecute(parameter);
-            return result && canExecute != null ? canExecute() : result;
+            return result && canExecute is not null ? canExecute() : result;
         }
     }
 
@@ -75,7 +75,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         public AnonymousTaskCommand(Func<Task> task, Func<bool>? canExecute = null)
             : base(x => task().Forget(), canExecute)
         {
-            if (task == null) throw new ArgumentNullException(nameof(task));
+            if (task is null) throw new ArgumentNullException(nameof(task));
         }
     }
 
@@ -96,7 +96,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         /// <param name="canExecute">An anonymous method that will be called each time the command <see cref="CommandBase.CanExecute(object)"/> method is invoked.</param>
         public AnonymousCommand(Action<T?> action, Func<T?, bool>? canExecute = null)
         {
-            if (action == null) throw new ArgumentNullException(nameof(action));
+            if (action is null) throw new ArgumentNullException(nameof(action));
             this.action = action;
             this.canExecute = canExecute;
         }
@@ -110,7 +110,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
             // allow to make the parameter optional: if not set it will fall back to the default value of the type (work for both class and value type)
             parameter ??= default(T);
             // check the type
-            if ((typeof(T).IsValueType || parameter != null) && !(parameter is T))
+            if ((typeof(T).IsValueType || parameter is not null) && parameter is not T)
                 throw new ArgumentException(@"Unexpected parameter type in the command.", nameof(parameter));
 
             action((T)parameter);
@@ -125,11 +125,11 @@ namespace Avalonia.GameStudio.Presentation.Commands
         public override bool CanExecute(object? parameter)
         {
             parameter ??= default(T);
-            if ((typeof(T).IsValueType || parameter != null) && !(parameter is T))
+            if ((typeof(T).IsValueType || parameter is not null) && parameter is not T)
                 throw new ArgumentException(@"Unexpected parameter type in the command.", nameof(parameter));
 
-            var result = base.CanExecute(parameter!);
-            return result && canExecute != null ? canExecute((T)parameter) : result;
+            var result = base.CanExecute(parameter);
+            return result && canExecute is not null ? canExecute((T)parameter) : result;
         }
     }
 
@@ -148,7 +148,7 @@ namespace Avalonia.GameStudio.Presentation.Commands
         public AnonymousTaskCommand(Func<T?, Task> task, Func<T?, bool>? canExecute = null)
             : base(x => task(x).Forget(), canExecute)
         {
-            if (task == null) throw new ArgumentNullException(nameof(task));
+            if (task is null) throw new ArgumentNullException(nameof(task));
         }
     }
 }

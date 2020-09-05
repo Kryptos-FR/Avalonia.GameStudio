@@ -62,7 +62,7 @@ namespace Avalonia.GameStudio.Presentation.Dock.Model.Core
             set
             {
                 if (!SetValue(ref _activeDockable, value)) return;
-                if (value != null)
+                if (value is not null)
                 {
                     Factory?.UpdateDockable(value, this);
                     value.OnSelected();

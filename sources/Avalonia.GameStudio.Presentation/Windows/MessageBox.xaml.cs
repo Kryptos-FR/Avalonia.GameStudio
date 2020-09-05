@@ -80,7 +80,7 @@ namespace Avalonia.GameStudio.Presentation.Windows
             var tcs = new TaskCompletionSource<MessageBoxResult>();
             messageBox.Closed += (_,_) => tcs.TrySetResult(result);
 
-            if (owner != null) messageBox.ShowDialog(owner);
+            if (owner is not null) messageBox.ShowDialog(owner);
             else messageBox.Show();
             
             return tcs.Task;
